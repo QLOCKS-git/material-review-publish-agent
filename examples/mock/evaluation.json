@@ -1,0 +1,93 @@
+{
+  "mode": "mock",
+  "evidence_scope": "offline_flow_only_not_model_quality",
+  "passed": true,
+  "passed_cases": 9,
+  "total_cases": 9,
+  "cases": [
+    {
+      "case": "normal",
+      "passed": true,
+      "actual_statuses": [
+        "COMPLETED"
+      ],
+      "error": null,
+      "artifacts": "examples/mock/normal"
+    },
+    {
+      "case": "missing_info",
+      "passed": true,
+      "actual_statuses": [
+        "NEEDS_INFO"
+      ],
+      "error": null,
+      "artifacts": "examples/mock/missing_info"
+    },
+    {
+      "case": "rule_risk",
+      "passed": true,
+      "actual_statuses": [
+        "BLOCKED"
+      ],
+      "error": null,
+      "artifacts": "examples/mock/rule_risk"
+    },
+    {
+      "case": "time_conflict",
+      "passed": true,
+      "actual_statuses": [
+        "PENDING_CONFIRMATION"
+      ],
+      "error": null,
+      "artifacts": "examples/mock/time_conflict"
+    },
+    {
+      "case": "save_failure",
+      "passed": true,
+      "actual_statuses": [
+        "FAILED"
+      ],
+      "error": null,
+      "artifacts": "examples/mock/save_failure"
+    },
+    {
+      "case": "supplemented",
+      "passed": true,
+      "actual_statuses": [
+        "COMPLETED"
+      ],
+      "error": null,
+      "artifacts": "examples/mock/supplemented"
+    },
+    {
+      "case": "review_confirmation",
+      "passed": true,
+      "actual_statuses": [
+        "PENDING_CONFIRMATION"
+      ],
+      "error": null,
+      "artifacts": "examples/mock/review_confirmation"
+    },
+    {
+      "case": "duplicate_submission",
+      "passed": true,
+      "actual_statuses": [
+        "COMPLETED",
+        "COMPLETED",
+        "PENDING_CONFIRMATION",
+        "PENDING_CONFIRMATION"
+      ],
+      "error": null,
+      "artifacts": "examples/mock/duplicate_submission"
+    },
+    {
+      "case": "step_limit",
+      "passed": true,
+      "actual_statuses": [
+        "INCOMPLETE"
+      ],
+      "error": null,
+      "artifacts": "examples/mock/step_limit"
+    }
+  ]
+}

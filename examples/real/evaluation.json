@@ -1,0 +1,93 @@
+{
+  "mode": "real",
+  "evidence_scope": "real_local_model_decisions",
+  "passed": true,
+  "passed_cases": 9,
+  "total_cases": 9,
+  "cases": [
+    {
+      "case": "normal",
+      "passed": true,
+      "actual_statuses": [
+        "COMPLETED"
+      ],
+      "error": null,
+      "artifacts": "examples/real/normal"
+    },
+    {
+      "case": "missing_info",
+      "passed": true,
+      "actual_statuses": [
+        "NEEDS_INFO"
+      ],
+      "error": null,
+      "artifacts": "examples/real/missing_info"
+    },
+    {
+      "case": "rule_risk",
+      "passed": true,
+      "actual_statuses": [
+        "BLOCKED"
+      ],
+      "error": null,
+      "artifacts": "examples/real/rule_risk"
+    },
+    {
+      "case": "time_conflict",
+      "passed": true,
+      "actual_statuses": [
+        "PENDING_CONFIRMATION"
+      ],
+      "error": null,
+      "artifacts": "examples/real/time_conflict"
+    },
+    {
+      "case": "save_failure",
+      "passed": true,
+      "actual_statuses": [
+        "FAILED"
+      ],
+      "error": null,
+      "artifacts": "examples/real/save_failure"
+    },
+    {
+      "case": "supplemented",
+      "passed": true,
+      "actual_statuses": [
+        "COMPLETED"
+      ],
+      "error": null,
+      "artifacts": "examples/real/supplemented"
+    },
+    {
+      "case": "review_confirmation",
+      "passed": true,
+      "actual_statuses": [
+        "PENDING_CONFIRMATION"
+      ],
+      "error": null,
+      "artifacts": "examples/real/review_confirmation"
+    },
+    {
+      "case": "duplicate_submission",
+      "passed": true,
+      "actual_statuses": [
+        "COMPLETED",
+        "COMPLETED",
+        "PENDING_CONFIRMATION",
+        "PENDING_CONFIRMATION"
+      ],
+      "error": null,
+      "artifacts": "examples/real/duplicate_submission"
+    },
+    {
+      "case": "step_limit",
+      "passed": true,
+      "actual_statuses": [
+        "INCOMPLETE"
+      ],
+      "error": null,
+      "artifacts": "examples/real/step_limit"
+    }
+  ]
+}

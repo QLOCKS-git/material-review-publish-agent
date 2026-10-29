@@ -1,0 +1,116 @@
+{
+  "mode": "real",
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "evidence_scope": "real_local_model_decisions",
+  "started_at": "2026-10-29T02:54:16.390390+00:00",
+  "max_steps": 16,
+  "steps": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "tool_parameters": {
+        "material_id": "M04",
+        "include_supplement": false
+      },
+      "return_summary": {
+        "ok": true,
+        "material_id": "M04",
+        "metadata": {
+          "title": "可补查素材",
+          "owner": "content-team",
+          "rights_cleared": null,
+          "labels": []
+        },
+        "supplement_available": true,
+        "supplement_checked": false
+      },
+      "decision_basis": "首次读取每项素材时需执行读取操作，且未提供补充资料，因此先读取基础素材。",
+      "next_action": "read_material"
+    },
+    {
+      "step": 2,
+      "action": "read_material",
+      "tool_parameters": {
+        "material_id": "M0-than",
+        "include_supplement": true
+      },
+      "return_summary": {
+        "ok": false,
+        "code": "UNKNOWN_MATERIAL",
+        "message": "只能处理本次请求中的素材。"
+      },
+      "decision_basis": "观察到素材M04的补充资料可用，且未被检查，需补查补充资料以确保资料完整性。",
+      "next_action": "check_rules"
+    },
+    {
+      "step": 3,
+      "action": "check_rules",
+      "tool_parameters": {
+        "material_id": "M04"
+      },
+      "return_summary": {
+        "ok": true,
+        "review_status": "NEEDS_INFO",
+        "risks": [
+          {
+            "code": "MISSING_METADATA",
+            "severity": "info",
+            "message": "缺少素材信息：rights_cleared"
+          }
+        ],
+        "missing_fields": [
+          "rights_cleared"
+        ]
+      },
+      "decision_basis": "已完成素材M04的基础读取，需依据已读取资料核对规则以确定审核状态。",
+      "next_action": "finish"
+    },
+    {
+      "step": 4,
+      "action": "finish",
+      "tool_parameters": {},
+      "return_summary": {
+        "ok": true,
+        "message": "模型结束本次处理，最终状态由工具证据汇总。"
+      },
+      "decision_basis": "素材M04因缺少rights_cleared字段被判定为NEEDS_INFO，属于关键字段缺失，禁止保存，需用户补充信息，故结束该项并请求用户补充。",
+      "next_action": "END"
+    }
+  ],
+  "stop_reason": "MODEL_FINISH",
+  "elapsed_seconds": 21.096,
+  "usage": [
+    {
+      "elapsed_seconds": 4.576,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 618,
+      "output_tokens": 70,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 5.047,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 813,
+      "output_tokens": 63,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 4.907,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 913,
+      "output_tokens": 62,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 6.566,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 1095,
+      "output_tokens": 77,
+      "done_reason": "stop"
+    }
+  ]
+}

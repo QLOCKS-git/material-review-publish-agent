@@ -1,0 +1,29 @@
+test_blocking_risk_prevents_scheduling (test_agent.AgentTests.test_blocking_risk_prevents_scheduling) ... ok
+test_changed_evidence_between_query_and_save_is_rejected (test_agent.AgentTests.test_changed_evidence_between_query_and_save_is_rejected) ... ok
+test_changed_occupied_slot_updates_same_draft (test_agent.AgentTests.test_changed_occupied_slot_updates_same_draft) ... ok
+test_concurrent_repeats_have_one_row (test_agent.AgentTests.test_concurrent_repeats_have_one_row) ... ok
+test_conflict_is_suggested_but_hard_requirement_is_unchanged (test_agent.AgentTests.test_conflict_is_suggested_but_hard_requirement_is_unchanged) ... ok
+test_duplicate_submission_has_one_stable_draft (test_agent.AgentTests.test_duplicate_submission_has_one_stable_draft) ... ok
+test_evaluation_rejects_unsafe_path_despite_correct_final_guard (test_agent.AgentTests.test_evaluation_rejects_unsafe_path_despite_correct_final_guard) ... ok
+test_explicit_time_approval_allows_confirmed_draft (test_agent.AgentTests.test_explicit_time_approval_allows_confirmed_draft) ... ok
+test_missing_information_requests_supplement_without_inventing_rights (test_agent.AgentTests.test_missing_information_requests_supplement_without_inventing_rights) ... ok
+test_missing_material_is_not_invented (test_agent.AgentTests.test_missing_material_is_not_invented) ... ok
+test_model_claim_of_publication_has_no_authority (test_agent.AgentTests.test_model_claim_of_publication_has_no_authority) ... ok
+test_multiple_materials_do_not_share_a_reserved_slot (test_agent.AgentTests.test_multiple_materials_do_not_share_a_reserved_slot) ... ok
+test_naive_time_is_rejected (test_agent.AgentTests.test_naive_time_is_rejected) ... ok
+test_no_available_slot_requires_user_input_without_saving (test_agent.AgentTests.test_no_available_slot_requires_user_input_without_saving) ... ok
+test_normal_only_saves_draft (test_agent.AgentTests.test_normal_only_saves_draft) ... ok
+test_real_model_unavailable_never_falls_back_to_mock (test_agent.AgentTests.test_real_model_unavailable_never_falls_back_to_mock) ... ok
+test_risk_requires_confirmation_and_can_be_explicitly_confirmed (test_agent.AgentTests.test_risk_requires_confirmation_and_can_be_explicitly_confirmed) ... ok
+test_same_request_id_cannot_change_original_hard_time (test_agent.AgentTests.test_same_request_id_cannot_change_original_hard_time) ... ok
+test_save_connection_failure_is_explicit_and_not_success (test_agent.AgentTests.test_save_connection_failure_is_explicit_and_not_success) ... ok
+test_save_failure_cannot_claim_previous_row_was_updated (test_agent.AgentTests.test_save_failure_cannot_claim_previous_row_was_updated) ... ok
+test_step_limit_is_explicit_incomplete (test_agent.AgentTests.test_step_limit_is_explicit_incomplete) ... ok
+test_supplement_changes_review_and_next_action (test_agent.AgentTests.test_supplement_changes_review_and_next_action) ... ok
+test_two_requests_cannot_reserve_the_same_slot (test_agent.AgentTests.test_two_requests_cannot_reserve_the_same_slot) ... ok
+test_undeclared_publish_tool_is_rejected_and_bounded (test_agent.AgentTests.test_undeclared_publish_tool_is_rejected_and_bounded) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.266s
+
+OK

@@ -1,0 +1,66 @@
+{
+  "mode": "mock",
+  "model": "deterministic-offline-policy",
+  "evidence_scope": "offline_flow_only_not_model_quality",
+  "started_at": "2026-10-29T03:09:12.073064+00:00",
+  "max_steps": 16,
+  "steps": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "tool_parameters": {
+        "material_id": "M03",
+        "include_supplement": false
+      },
+      "return_summary": {
+        "ok": true,
+        "material_id": "M03",
+        "metadata": {
+          "title": "未授权素材",
+          "owner": "content-team",
+          "rights_cleared": false,
+          "labels": []
+        },
+        "supplement_available": false,
+        "supplement_checked": false
+      },
+      "decision_basis": "流程 Mock：先读取素材。",
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "tool_parameters": {
+        "material_id": "M03"
+      },
+      "return_summary": {
+        "ok": true,
+        "review_status": "BLOCKED",
+        "risks": [
+          {
+            "code": "RIGHTS_REJECTED",
+            "severity": "block",
+            "message": "素材未取得使用授权。"
+          }
+        ],
+        "missing_fields": []
+      },
+      "decision_basis": "流程 Mock：核验已读取的元数据。",
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "tool_parameters": {},
+      "return_summary": {
+        "ok": true,
+        "message": "模型结束本次处理，最终状态由工具证据汇总。"
+      },
+      "decision_basis": "流程 Mock：全部项目已保存或需要用户处理。",
+      "next_action": "END"
+    }
+  ],
+  "stop_reason": "MODEL_FINISH",
+  "elapsed_seconds": 0.0,
+  "usage": []
+}

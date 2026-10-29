@@ -1,0 +1,36 @@
+{
+  "mode": "mock",
+  "model": "deterministic-offline-policy",
+  "evidence_scope": "offline_flow_only_not_model_quality",
+  "started_at": "2026-10-29T03:09:12.136116+00:00",
+  "max_steps": 1,
+  "steps": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "tool_parameters": {
+        "material_id": "M01",
+        "include_supplement": false
+      },
+      "return_summary": {
+        "ok": true,
+        "material_id": "M01",
+        "metadata": {
+          "title": "秋日旅行素材",
+          "owner": "content-team",
+          "rights_cleared": true,
+          "labels": [
+            "travel"
+          ]
+        },
+        "supplement_available": false,
+        "supplement_checked": false
+      },
+      "decision_basis": "流程 Mock：先读取素材。",
+      "next_action": "STEP_LIMIT"
+    }
+  ],
+  "stop_reason": "STEP_LIMIT",
+  "elapsed_seconds": 0.0,
+  "usage": []
+}

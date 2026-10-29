@@ -1,0 +1,110 @@
+{
+  "case_id": "duplicate_submission",
+  "request": {
+    "request_id": "req-20261105-001",
+    "items": [
+      {
+        "material_id": "M01",
+        "channel": "main",
+        "requested_at": "2026-11-05T18:00:00+08:00",
+        "hard_time": true,
+        "approved_alternatives": [],
+        "approved_risks": []
+      }
+    ]
+  },
+  "world": {
+    "materials": {
+      "M01": {
+        "metadata": {
+          "title": "秋日旅行素材",
+          "owner": "content-team",
+          "rights_cleared": true,
+          "labels": [
+            "travel"
+          ]
+        },
+        "supplement": {}
+      },
+      "M02": {
+        "metadata": {
+          "title": "待补充授权材料",
+          "owner": "content-team",
+          "rights_cleared": null,
+          "labels": []
+        },
+        "supplement": {}
+      },
+      "M03": {
+        "metadata": {
+          "title": "未授权素材",
+          "owner": "content-team",
+          "rights_cleared": false,
+          "labels": []
+        },
+        "supplement": {}
+      },
+      "M04": {
+        "metadata": {
+          "title": "可补查素材",
+          "owner": "content-team",
+          "rights_cleared": null,
+          "labels": []
+        },
+        "supplement": {
+          "rights_cleared": true
+        }
+      },
+      "M05": {
+        "metadata": {
+          "title": "需要免责声明的素材",
+          "owner": "content-team",
+          "rights_cleared": true,
+          "labels": [],
+          "review_flags": [
+            "DISCLAIMER_REQUIRED"
+          ]
+        },
+        "supplement": {}
+      }
+    },
+    "rules": {
+      "required_fields": [
+        "title",
+        "owner",
+        "rights_cleared"
+      ],
+      "blocked_labels": [
+        "prohibited"
+      ],
+      "confirmation_flags": {
+        "DISCLAIMER_REQUIRED": "需确认已补充免责声明。"
+      }
+    },
+    "slots": [
+      {
+        "channel": "main",
+        "at": "2026-11-05T18:00:00+08:00"
+      },
+      {
+        "channel": "main",
+        "at": "2026-11-05T19:00:00+08:00"
+      },
+      {
+        "channel": "main",
+        "at": "2026-11-05T20:00:00+08:00"
+      },
+      {
+        "channel": "main",
+        "at": "2026-11-05T21:00:00+08:00"
+      }
+    ],
+    "occupied": [
+      {
+        "channel": "main",
+        "at": "2026-11-05T18:00:00+08:00"
+      }
+    ],
+    "faults": {}
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "mode": "mock",
+  "model": "deterministic-offline-policy",
+  "evidence_scope": "offline_flow_only_not_model_quality",
+  "started_at": "2026-10-29T03:09:12.122209+00:00",
+  "max_steps": 16,
+  "steps": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "tool_parameters": {
+        "material_id": "M01",
+        "include_supplement": false
+      },
+      "return_summary": {
+        "ok": true,
+        "material_id": "M01",
+        "metadata": {
+          "title": "秋日旅行素材",
+          "owner": "content-team",
+          "rights_cleared": true,
+          "labels": [
+            "travel"
+          ]
+        },
+        "supplement_available": false,
+        "supplement_checked": false
+      },
+      "decision_basis": "流程 Mock：先读取素材。",
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "tool_parameters": {
+        "material_id": "M01"
+      },
+      "return_summary": {
+        "ok": true,
+        "review_status": "APPROVED",
+        "risks": [],
+        "missing_fields": []
+      },
+      "decision_basis": "流程 Mock：核验已读取的元数据。",
+      "next_action": "query_slots"
+    },
+    {
+      "step": 3,
+      "action": "query_slots",
+      "tool_parameters": {
+        "material_id": "M01"
+      },
+      "return_summary": {
+        "ok": true,
+        "requested_at": "2026-11-05T18:00:00+08:00",
+        "requested_available": false,
+        "available_slots": [
+          "2026-11-05T19:00:00+08:00",
+          "2026-11-05T20:00:00+08:00",
+          "2026-11-05T21:00:00+08:00"
+        ],
+        "schedule_version": "0b3ddf1002eb76c3da5354f5e43d7f7f16e44c4a8fa891568cc0cd0444430643"
+      },
+      "decision_basis": "流程 Mock：读取最新可用时间。",
+      "next_action": "save_draft"
+    },
+    {
+      "step": 4,
+      "action": "save_draft",
+      "tool_parameters": {
+        "material_id": "M01",
+        "proposed_at": "2026-11-05T19:00:00+08:00"
+      },
+      "return_summary": {
+        "ok": true,
+        "code": "UPDATED",
+        "draft": {
+          "request_id": "req-20261105-001",
+          "material_id": "M01",
+          "channel": "main",
+          "requested_at": "2026-11-05T18:00:00+08:00",
+          "hard_time": true,
+          "proposed_at": "2026-11-05T19:00:00+08:00",
+          "review_status": "APPROVED",
+          "risks": [],
+          "confirmation_status": "PENDING",
+          "pending_confirmations": [
+            {
+              "code": "TIME_CHANGE",
+              "message": "建议时段与硬性要求不同，须由用户确认。"
+            }
+          ],
+          "published": false,
+          "schedule_version": "0b3ddf1002eb76c3da5354f5e43d7f7f16e44c4a8fa891568cc0cd0444430643",
+          "draft_id": "7b22c8e7-2717-4284-9ae2-8b9ff25a9875",
+          "updated_at": "2026-10-29T03:09:12.122792+00:00"
+        }
+      },
+      "decision_basis": "流程 Mock：保存已核验时段，由工具计算待确认项。",
+      "next_action": "finish"
+    },
+    {
+      "step": 5,
+      "action": "finish",
+      "tool_parameters": {},
+      "return_summary": {
+        "ok": true,
+        "message": "模型结束本次处理，最终状态由工具证据汇总。"
+      },
+      "decision_basis": "流程 Mock：全部项目已保存或需要用户处理。",
+      "next_action": "END"
+    }
+  ],
+  "stop_reason": "MODEL_FINISH",
+  "elapsed_seconds": 0.004,
+  "usage": []
+}

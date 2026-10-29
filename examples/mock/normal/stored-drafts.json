@@ -1,0 +1,18 @@
+[
+  {
+    "channel": "main",
+    "confirmation_status": "CONFIRMED",
+    "draft_id": "6ce374a2-3930-4e9b-9f7d-6fe668ce938a",
+    "hard_time": true,
+    "material_id": "M01",
+    "pending_confirmations": [],
+    "proposed_at": "2026-11-05T18:00:00+08:00",
+    "published": false,
+    "request_id": "req-20261105-001",
+    "requested_at": "2026-11-05T18:00:00+08:00",
+    "review_status": "APPROVED",
+    "risks": [],
+    "schedule_version": "37ab47ad941c6088c230af36efd9aa4cf665065f0548600a26ab2a319461f51a",
+    "updated_at": "2026-10-29T03:09:12.056199+00:00"
+  }
+]

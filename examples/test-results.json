@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-10-29T03:09:12.008018+00:00",
+  "python": "3.12.3",
+  "tests_run": 24,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "elapsed_seconds": 0.332,
+  "report": "examples/test-results.txt"
+}

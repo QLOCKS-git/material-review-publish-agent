@@ -1,0 +1,172 @@
+{
+  "mode": "real",
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "evidence_scope": "real_local_model_decisions",
+  "started_at": "2026-10-29T03:02:06.567944+00:00",
+  "max_steps": 16,
+  "steps": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "tool_parameters": {
+        "material_id": "M05",
+        "include_supplement": false
+      },
+      "return_summary": {
+        "ok": true,
+        "material_id": "M05",
+        "metadata": {
+          "title": "需要免责声明的素材",
+          "owner": "content-team",
+          "rights_cleared": true,
+          "labels": [],
+          "review_flags": [
+            "DISCLAIMER_REQUIRED"
+          ]
+        },
+        "supplement_available": false,
+        "supplement_checked": false
+      },
+      "decision_basis": "首次读取每项素材时需执行读取操作，且未提供补充资料，因此需先读取基础素材信息。",
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "tool_parameters": {
+        "material_id": "M05"
+      },
+      "return_summary": {
+        "ok": true,
+        "review_status": "REQUIRES_CONFIRMATION",
+        "risks": [
+          {
+            "code": "DISCLAIMER_REQUIRED",
+            "severity": "confirm",
+            "message": "需确认已补充免责声明。"
+          }
+        ],
+        "missing_fields": []
+      },
+      "decision_basis": "已读取素材基础信息，需依据规则核对审核状态，判断是否需进一步操作。",
+      "next_action": "query_slots"
+    },
+    {
+      "step": 3,
+      "action": "query_slots",
+      "tool_parameters": {
+        "material_id": "M05"
+      },
+      "return_summary": {
+        "ok": true,
+        "requested_at": "2026-11-05T18:00:00+08:00",
+        "requested_available": true,
+        "available_slots": [
+          "2026-11-05T18:00:00+08:00",
+          "2026-11-05T19:00:00+08:00",
+          "2026-11-05T20:00:00+08:00",
+          "2026-11-05T21:00:00+08:00"
+        ],
+        "schedule_version": "37ab47ad941c6088c230af36efd9aa4cf665065f0548600a26ab2a319461f51a"
+      },
+      "decision_basis": "审核状态为REQUIRES_CONFIRMATION，资料完整且存在可确认风险，允许查询可用时段，优先尝试匹配用户原时段。",
+      "next_action": "save_draft"
+    },
+    {
+      "step": 4,
+      "action": "save_draft",
+      "tool_parameters": {
+        "material_id": "M05",
+        "proposed_at": "2026-11-05T18:00:00+08:00"
+      },
+      "return_summary": {
+        "ok": true,
+        "code": "SAVED",
+        "draft": {
+          "request_id": "req-20261105-001",
+          "material_id": "M05",
+          "channel": "main",
+          "requested_at": "2026-11-05T18:00:00+08:00",
+          "hard_time": true,
+          "proposed_at": "2026-11-05T18:00:00+08:00",
+          "review_status": "REQUIRES_CONFIRMATION",
+          "risks": [
+            {
+              "code": "DISCLAIMER_REQUIRED",
+              "severity": "confirm",
+              "message": "需确认已补充免责声明。"
+            }
+          ],
+          "confirmation_status": "PENDING",
+          "pending_confirmations": [
+            {
+              "code": "DISCLAIMER_REQUIRED",
+              "message": "需确认已补充免责声明。"
+            }
+          ],
+          "published": false,
+          "schedule_version": "37ab47ad941c6088c230af36efd9aa4cf665065f0548600a26ab2a319461f51a",
+          "draft_id": "65930896-cf3e-4b59-a21f-9ba7d2512f0c",
+          "updated_at": "2026-10-29T03:02:32.588553+00:00"
+        }
+      },
+      "decision_basis": "用户原时段可用且审核状态为REQUIRES_CONFIRMATION，资料完整，符合保存为待确认草稿的条件，优先使用原时段保存。",
+      "next_action": "finish"
+    },
+    {
+      "step": 5,
+      "action": "finish",
+      "tool_parameters": {},
+      "return_summary": {
+        "ok": true,
+        "message": "模型结束本次处理，最终状态由工具证据汇总。"
+      },
+      "decision_basis": "所有素材已处理完毕，M05 项已成功保存为待确认草稿，且无其他待处理项，符合结束条件。",
+      "next_action": "END"
+    }
+  ],
+  "stop_reason": "MODEL_FINISH",
+  "elapsed_seconds": 41.7,
+  "usage": [
+    {
+      "elapsed_seconds": 4.89,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 618,
+      "output_tokens": 72,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 5.087,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 835,
+      "output_tokens": 58,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 5.823,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 1008,
+      "output_tokens": 65,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 11.001,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 1522,
+      "output_tokens": 94,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 14.869,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 2340,
+      "output_tokens": 67,
+      "done_reason": "stop"
+    }
+  ]
+}

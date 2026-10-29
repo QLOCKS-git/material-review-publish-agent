@@ -1,0 +1,45 @@
+{
+  "mode": "real",
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "evidence_scope": "real_local_model_decisions",
+  "started_at": "2026-10-29T03:05:13.713338+00:00",
+  "max_steps": 1,
+  "steps": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "tool_parameters": {
+        "material_id": "M01",
+        "include_supplement": false
+      },
+      "return_summary": {
+        "ok": true,
+        "material_id": "M01",
+        "metadata": {
+          "title": "秋日旅行素材",
+          "owner": "content-team",
+          "rights_cleared": true,
+          "labels": [
+            "travel"
+          ]
+        },
+        "supplement_available": false,
+        "supplement_checked": false
+      },
+      "decision_basis": "首次读取每项素材时需执行读取操作，且初始状态不包含补充资料。",
+      "next_action": "STEP_LIMIT"
+    }
+  ],
+  "stop_reason": "STEP_LIMIT",
+  "elapsed_seconds": 3.977,
+  "usage": [
+    {
+      "elapsed_seconds": 3.976,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 618,
+      "output_tokens": 65,
+      "done_reason": "stop"
+    }
+  ]
+}

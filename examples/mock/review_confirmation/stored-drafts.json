@@ -1,0 +1,29 @@
+[
+  {
+    "channel": "main",
+    "confirmation_status": "PENDING",
+    "draft_id": "dac65239-885b-4550-ac92-2d0755ea932f",
+    "hard_time": true,
+    "material_id": "M05",
+    "pending_confirmations": [
+      {
+        "code": "DISCLAIMER_REQUIRED",
+        "message": "需确认已补充免责声明。"
+      }
+    ],
+    "proposed_at": "2026-11-05T18:00:00+08:00",
+    "published": false,
+    "request_id": "req-20261105-001",
+    "requested_at": "2026-11-05T18:00:00+08:00",
+    "review_status": "REQUIRES_CONFIRMATION",
+    "risks": [
+      {
+        "code": "DISCLAIMER_REQUIRED",
+        "message": "需确认已补充免责声明。",
+        "severity": "confirm"
+      }
+    ],
+    "schedule_version": "37ab47ad941c6088c230af36efd9aa4cf665065f0548600a26ab2a319461f51a",
+    "updated_at": "2026-10-29T03:09:12.106999+00:00"
+  }
+]

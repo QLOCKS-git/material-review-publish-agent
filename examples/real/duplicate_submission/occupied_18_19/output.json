@@ -1,0 +1,32 @@
+{
+  "request_id": "req-20261105-001",
+  "mode": "real",
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "status": "PENDING_CONFIRMATION",
+  "stop_reason": "MODEL_FINISH",
+  "model_steps": 5,
+  "publication_status": "DRAFT_ONLY",
+  "published": false,
+  "items": [
+    {
+      "material_id": "M01",
+      "review_status": "APPROVED",
+      "risks": [],
+      "requested_at": "2026-11-05T18:00:00+08:00",
+      "hard_time": true,
+      "suggested_at": "2026-11-05T20:00:00+08:00",
+      "confirmation_status": "PENDING",
+      "pending_confirmations": [
+        {
+          "code": "TIME_CHANGE",
+          "message": "建议时段与硬性要求不同，须由用户确认。"
+        }
+      ],
+      "draft_save_status": "UPDATED",
+      "draft_id": "2a4294d1-03db-4818-a873-693a97b198d5",
+      "save_error": null,
+      "outcome": "PENDING_CONFIRMATION",
+      "published": false
+    }
+  ]
+}

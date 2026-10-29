@@ -1,0 +1,146 @@
+{
+  "mode": "real",
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "evidence_scope": "real_local_model_decisions",
+  "started_at": "2026-10-29T02:48:09.649749+00:00",
+  "max_steps": 16,
+  "steps": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "tool_parameters": {
+        "material_id": "M02",
+        "include_supplement": true
+      },
+      "return_summary": {
+        "ok": true,
+        "material_id": "M02",
+        "metadata": {
+          "title": "待补充授权材料",
+          "owner": "content-team",
+          "rights_cleared": null,
+          "labels": []
+        },
+        "supplement_available": false,
+        "supplement_checked": true
+      },
+      "decision_basis": "资料缺失需先补查补充资料以确保完整",
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "tool_parameters": {
+        "material_id": "M02"
+      },
+      "return_summary": {
+        "ok": true,
+        "review_status": "NEEDS_INFO",
+        "risks": [
+          {
+            "code": "MISSING_METADATA",
+            "severity": "info",
+            "message": "缺少素材信息：rights_cleared"
+          }
+        ],
+        "missing_fields": [
+          "rights_cleared"
+        ]
+      },
+      "decision_basis": "已读取素材并确认补充资料不可用，需核对规则以判断审核状态和风险",
+      "next_action": "query_slots"
+    },
+    {
+      "step": 3,
+      "action": "query_slots",
+      "tool_parameters": {
+        "material_id": "M02"
+      },
+      "return_summary": {
+        "ok": true,
+        "requested_at": "2026-11-05T18:00:00+08:00",
+        "requested_available": true,
+        "available_slots": [
+          "2026-11-05T18:00:00+08:00",
+          "2026-11-05T19:00:00+08:00",
+          "2026-11-05T20:00:00+08:00",
+          "2026-11-05T21:00:00+08:00"
+        ],
+        "schedule_version": "37ab47ad941c6088c230af36efd9aa4cf665065f0548600a26ab2a319461f51a"
+      },
+      "decision_basis": "素材存在信息缺失且需补充，但规则显示需信息确认，故需查询原时段可用性以提供替代建议",
+      "next_action": "save_draft"
+    },
+    {
+      "step": 4,
+      "action": "save_draft",
+      "tool_parameters": {
+        "material_id": "M02",
+        "proposed_at": "2026-11-05T18:00:00+08:00"
+      },
+      "return_summary": {
+        "ok": false,
+        "code": "REVIEW_REQUIRED",
+        "message": "审核未通过或资料不完整，不能保存排期。",
+        "retryable": false
+      },
+      "decision_basis": "原时段可用且规则要求信息确认，尽管存在缺失字段，但已读取并核验，符合保存条件",
+      "next_action": "finish"
+    },
+    {
+      "step": 5,
+      "action": "finish",
+      "tool_parameters": {},
+      "return_summary": {
+        "ok": true,
+        "message": "模型结束本次处理，最终状态由工具证据汇总。"
+      },
+      "decision_basis": "资料缺失关键字段 rights_cleared，审核要求信息确认，保存失败且不可重试，故终止该素材处理",
+      "next_action": "END"
+    }
+  ],
+  "stop_reason": "MODEL_FINISH",
+  "elapsed_seconds": 32.702,
+  "usage": [
+    {
+      "elapsed_seconds": 3.659,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 501,
+      "output_tokens": 55,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 4.758,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 681,
+      "output_tokens": 60,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 5.47,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 861,
+      "output_tokens": 63,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 10.274,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 1373,
+      "output_tokens": 87,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 8.539,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 1581,
+      "output_tokens": 63,
+      "done_reason": "stop"
+    }
+  ]
+}

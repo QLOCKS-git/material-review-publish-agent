@@ -1,0 +1,154 @@
+{
+  "mode": "real",
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "evidence_scope": "real_local_model_decisions",
+  "started_at": "2026-10-29T03:03:23.367444+00:00",
+  "max_steps": 16,
+  "steps": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "tool_parameters": {
+        "material_id": "M01",
+        "include_supplement": false
+      },
+      "return_summary": {
+        "ok": true,
+        "material_id": "M01",
+        "metadata": {
+          "title": "秋日旅行素材",
+          "owner": "content-team",
+          "rights_cleared": true,
+          "labels": [
+            "travel"
+          ]
+        },
+        "supplement_available": false,
+        "supplement_checked": false
+      },
+      "decision_basis": "首次读取每项素材时需执行读取操作，且初始状态不包含补充资料。",
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "tool_parameters": {
+        "material_id": "M01"
+      },
+      "return_summary": {
+        "ok": true,
+        "review_status": "APPROVED",
+        "risks": [],
+        "missing_fields": []
+      },
+      "decision_basis": "必须在读取素材后执行规则核对，以确定审核状态并指导后续动作。",
+      "next_action": "query_slots"
+    },
+    {
+      "step": 3,
+      "action": "query_slots",
+      "tool_parameters": {
+        "material_id": "M01"
+      },
+      "return_summary": {
+        "ok": true,
+        "requested_at": "2026-11-05T18:00:00+08:00",
+        "requested_available": true,
+        "available_slots": [
+          "2026-11-05T18:00:00+08:00",
+          "2026-11-05T19:00:00+08:00",
+          "2026-11-05T20:00:00+08:00",
+          "2026-11-05T21:00:00+08:00"
+        ],
+        "schedule_version": "37ab47ad941c6088c230af36efd9aa4cf665065f0548600a26ab2a319461f51a"
+      },
+      "decision_basis": "审核状态为APPROVED，资料完整，可查询原要求及同一天当前可用时段，优先选择用户原时段。",
+      "next_action": "save_draft"
+    },
+    {
+      "step": 4,
+      "action": "save_draft",
+      "tool_parameters": {
+        "material_id": "M01",
+        "proposed_at": "2026-11-05T18:00:00+08:00"
+      },
+      "return_summary": {
+        "ok": true,
+        "code": "UNCHANGED",
+        "draft": {
+          "channel": "main",
+          "confirmation_status": "CONFIRMED",
+          "draft_id": "2a4294d1-03db-4818-a873-693a97b198d5",
+          "hard_time": true,
+          "material_id": "M01",
+          "pending_confirmations": [],
+          "proposed_at": "2026-11-05T18:00:00+08:00",
+          "published": false,
+          "request_id": "req-20261105-001",
+          "requested_at": "2026-11-05T18:00:00+08:00",
+          "review_status": "APPROVED",
+          "risks": [],
+          "schedule_version": "37ab47ad941c6088c230af36efd9aa4cf665065f0548600a26ab2a319461f51a",
+          "updated_at": "2026-10-29T03:03:10.237577+00:00"
+        }
+      },
+      "decision_basis": "用户原时段可用且审核通过，符合保存条件，优先使用原时段保存草稿。",
+      "next_action": "finish"
+    },
+    {
+      "step": 5,
+      "action": "finish",
+      "tool_parameters": {},
+      "return_summary": {
+        "ok": true,
+        "message": "模型结束本次处理，最终状态由工具证据汇总。"
+      },
+      "decision_basis": "所有素材已处理完毕，且每项均完成读取、规则核对、时段查询与草稿保存，无需进一步操作。",
+      "next_action": "END"
+    }
+  ],
+  "stop_reason": "MODEL_FINISH",
+  "elapsed_seconds": 37.151,
+  "usage": [
+    {
+      "elapsed_seconds": 3.884,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 618,
+      "output_tokens": 65,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 4.762,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 812,
+      "output_tokens": 57,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 5.258,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 930,
+      "output_tokens": 64,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 9.778,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 1443,
+      "output_tokens": 82,
+      "done_reason": "stop"
+    },
+    {
+      "elapsed_seconds": 13.467,
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "backend": "llamacpp",
+      "prompt_tokens": 2159,
+      "output_tokens": 66,
+      "done_reason": "stop"
+    }
+  ]
+}

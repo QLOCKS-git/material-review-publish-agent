@@ -1,0 +1,7 @@
+{
+  "expected": "资料补查后仍缺失时结束，不查询或保存排期",
+  "actual": "模型在 NEEDS_INFO 后查询并尝试保存，工具返回 REVIEW_REQUIRED 并阻止写入",
+  "passed": false,
+  "error": "model attempted scheduling before a complete, allowed review",
+  "change": "明确审核枚举的权限差异；验收增加动作路径检查"
+}

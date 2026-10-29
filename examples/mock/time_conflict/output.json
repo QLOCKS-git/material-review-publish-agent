@@ -1,0 +1,32 @@
+{
+  "request_id": "req-20261105-001",
+  "mode": "mock",
+  "model": "deterministic-offline-policy",
+  "status": "PENDING_CONFIRMATION",
+  "stop_reason": "MODEL_FINISH",
+  "model_steps": 5,
+  "publication_status": "DRAFT_ONLY",
+  "published": false,
+  "items": [
+    {
+      "material_id": "M01",
+      "review_status": "APPROVED",
+      "risks": [],
+      "requested_at": "2026-11-05T18:00:00+08:00",
+      "hard_time": true,
+      "suggested_at": "2026-11-05T19:00:00+08:00",
+      "confirmation_status": "PENDING",
+      "pending_confirmations": [
+        {
+          "code": "TIME_CHANGE",
+          "message": "建议时段与硬性要求不同，须由用户确认。"
+        }
+      ],
+      "draft_save_status": "SAVED",
+      "draft_id": "f8869b14-5d82-4065-a98b-fbe17ba3aa5d",
+      "save_error": null,
+      "outcome": "PENDING_CONFIRMATION",
+      "published": false
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "mode": "mock",
+  "model": "deterministic-offline-policy",
+  "evidence_scope": "offline_flow_only_not_model_quality",
+  "started_at": "2026-10-29T03:09:12.089753+00:00",
+  "max_steps": 16,
+  "steps": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "tool_parameters": {
+        "material_id": "M01",
+        "include_supplement": false
+      },
+      "return_summary": {
+        "ok": true,
+        "material_id": "M01",
+        "metadata": {
+          "title": "秋日旅行素材",
+          "owner": "content-team",
+          "rights_cleared": true,
+          "labels": [
+            "travel"
+          ]
+        },
+        "supplement_available": false,
+        "supplement_checked": false
+      },
+      "decision_basis": "流程 Mock：先读取素材。",
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "tool_parameters": {
+        "material_id": "M01"
+      },
+      "return_summary": {
+        "ok": true,
+        "review_status": "APPROVED",
+        "risks": [],
+        "missing_fields": []
+      },
+      "decision_basis": "流程 Mock：核验已读取的元数据。",
+      "next_action": "query_slots"
+    },
+    {
+      "step": 3,
+      "action": "query_slots",
+      "tool_parameters": {
+        "material_id": "M01"
+      },
+      "return_summary": {
+        "ok": true,
+        "requested_at": "2026-11-05T18:00:00+08:00",
+        "requested_available": true,
+        "available_slots": [
+          "2026-11-05T18:00:00+08:00",
+          "2026-11-05T19:00:00+08:00",
+          "2026-11-05T20:00:00+08:00",
+          "2026-11-05T21:00:00+08:00"
+        ],
+        "schedule_version": "cd9345cf416ce04170cf6f1d434375e605684ee5427878ecacf0a1e0cf4f4255"
+      },
+      "decision_basis": "流程 Mock：读取最新可用时间。",
+      "next_action": "save_draft"
+    },
+    {
+      "step": 4,
+      "action": "save_draft",
+      "tool_parameters": {
+        "material_id": "M01",
+        "proposed_at": "2026-11-05T18:00:00+08:00"
+      },
+      "return_summary": {
+        "ok": false,
+        "code": "SAVE_FAILED",
+        "message": "模拟草稿存储服务不可用，未保存。",
+        "retryable": false
+      },
+      "decision_basis": "流程 Mock：保存已核验时段，由工具计算待确认项。",
+      "next_action": "finish"
+    },
+    {
+      "step": 5,
+      "action": "finish",
+      "tool_parameters": {},
+      "return_summary": {
+        "ok": true,
+        "message": "模型结束本次处理，最终状态由工具证据汇总。"
+      },
+      "decision_basis": "流程 Mock：全部项目已保存或需要用户处理。",
+      "next_action": "END"
+    }
+  ],
+  "stop_reason": "MODEL_FINISH",
+  "elapsed_seconds": 0.0,
+  "usage": []
+}

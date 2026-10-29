@@ -1,0 +1,13 @@
+{
+  "required_fields": [
+    "title",
+    "owner",
+    "rights_cleared"
+  ],
+  "blocked_labels": [
+    "prohibited"
+  ],
+  "confirmation_flags": {
+    "DISCLAIMER_REQUIRED": "需确认已补充免责声明。"
+  }
+}
